@@ -41,11 +41,11 @@ module.exports = {
         let newlocale = stringhandler.argsParse('language', command)[0];
         console.log(newlocale);
         if (typeof newlocale === "undefined") {
-            msg.channel.send('You did not choose an language!');
+            send('You did not choose an language!');
         } else {
             locale = newlocale;
             filehandler.saveFile('lang.txt', locale);
-            msg.channel.send('Changed Language!');
+            send('Changed Language!');
         }
     },
 };
