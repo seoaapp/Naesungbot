@@ -31,7 +31,7 @@ function translateAndSendMessage(msg, destLocale, text) {
 
 module.exports = {
     'translate': (msg, command) => {
-        let destLocale = args[1];
+        let destLocale = stringhandler.argsParse('translate', command)[1];
         let originalText = command.substring(command.indexOf(destLocale) + destLocale.length, command.length);
         translateAndSendMessage(msg, destLocale, originalText);
     },
@@ -39,11 +39,11 @@ module.exports = {
         let newlocale = stringhandler.argsParse('language', command)[0];
         console.log(locale);
         if (typeof newlocale === "undefined") {
-            reply(msg, 'You did not choose an language!');
+            msg.channel.send('You did not choose an language!');
         } else {
             locale = newlocale;
             filehandler.saveFile('lang.txt', locale);
-            reply(msg, 'Changed Language!');
+            msg.channel.send('Changed Language!');
         }
     },
 };
