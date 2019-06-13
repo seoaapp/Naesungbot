@@ -13,7 +13,7 @@ const refresh = () => {
         list = ['ko'];
         save();
     }
-    return list;
+    return list[0];
 };
 
 exports.get = () => refresh();
