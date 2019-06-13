@@ -1,11 +1,11 @@
 const filehandler = require('../filehandler');
 const translate = require('@vitalets/google-translate-api');
 const stringhandler = require('../stringhandler');
-const locale = require('../locale');
 
 // send 번역
 // 응용 TODO
 function send(msg, text) {
+    const locale = require('../locale');
     let lang = locale.get();
     translateAndSendMessage(msg, lang, text);
 }
@@ -28,6 +28,7 @@ module.exports = {
         translateAndSendMessage(msg, destLocale, originalText);
     },
     'language': (msg, command) => {
+        const locale = require('../locale');
         let newlocale = stringhandler.argsParse('language', command)[0];
         console.log(newlocale);
         if (typeof newlocale === "undefined") {
