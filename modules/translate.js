@@ -42,10 +42,10 @@ module.exports = {
         let newlocale = stringhandler.argsParse('language', command)[0];
         console.log(newlocale);
         if (typeof newlocale === "undefined") {
-            send('You did not choose an language!');
+            send(msg, 'You did not choose an language!');
         } else {
             filehandler.saveFile('lang.txt', newlocale);
-            send('Changed Language!');
+            send(msg, 'Changed Language!');
         }
     },
 };
