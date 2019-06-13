@@ -10,7 +10,8 @@ const refresh = () => {
     try {
         list = require('./data/locale.json');
     } catch (e) {
-        list = [];
+        list = ['ko'];
+        save();
     }
     return list;
 };
