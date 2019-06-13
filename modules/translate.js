@@ -6,7 +6,7 @@ const locale = require('../locale');
 // send 번역
 // 응용 TODO
 function send(msg, text) {
-    locale = locale.get();
+    let locale = locale.get();
     translateAndSendMessage(msg, locale, text);
 }
 
