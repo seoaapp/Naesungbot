@@ -31,7 +31,7 @@ function translateAndSendMessage(msg, destLocale, text) {
 
 module.exports = {
     'translate': (msg, command) => {
-        let destLocale = stringhandler.argsParse('translate', command)[1];
+        let destLocale = stringhandler.argsParse('translate', command)[0];
         let originalText = command.substring(command.indexOf(destLocale) + destLocale.length, command.length);
         translateAndSendMessage(msg, destLocale, originalText);
     },
