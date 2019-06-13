@@ -38,7 +38,7 @@ module.exports = {
     },
     'language': (msg, command) => {
         let newlocale = stringhandler.argsParse('language', command)[0];
-        console.log(locale);
+        console.log(newlocale);
         if (typeof newlocale === "undefined") {
             msg.channel.send('You did not choose an language!');
         } else {
