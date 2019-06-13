@@ -1,4 +1,5 @@
 const filehandler = require('../filehandler');
+const translate = require('@vitalets/google-translate-api');
 
 // send 번역
 // 응용 TODO
