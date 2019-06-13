@@ -84,7 +84,7 @@ module.exports = {
     },
     'roleinfo': (msg, command) => {
         let args = stringhandler.argsParse('roleinfo', command);
-        let role = msg.mentions.roles.first() || msg.guild.roles.get(args[1]) || msg.guild.roles.find(role => role.name === args[1]);
+        let role = msg.mentions.roles.first() || msg.guild.roles.get(args[0]) || msg.guild.roles.find(role => role.name === args[0]);
         if (!role) role = msg.member.highestRole;
         let embed = new Discord.RichEmbed()
             .setColor(role.hexColor)
