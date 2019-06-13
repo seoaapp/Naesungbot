@@ -5,6 +5,7 @@ const stringhandler = require('../stringhandler');
 // send 번역
 // 응용 TODO
 function send(msg, text) {
+    let locale = stringhandler.readFile('lang.txt');
     if(locale === 'en') {
         msg.channel.send(text);
         return msg;
@@ -43,8 +44,7 @@ module.exports = {
         if (typeof newlocale === "undefined") {
             send('You did not choose an language!');
         } else {
-            locale = newlocale;
-            filehandler.saveFile('lang.txt', locale);
+            filehandler.saveFile('lang.txt', newlocale);
             send('Changed Language!');
         }
     },
