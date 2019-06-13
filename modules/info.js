@@ -16,7 +16,7 @@ module.exports = {
       msg.reply(Math.round(client.ping) + "ms");
     },
     'userinfo': (msg, command) => {
-        let args = stringhandler.argsParse('userinfo', 'command');
+        let args = stringhandler.argsParse('userinfo', command);
         function senduserinfo(user) {
             embed.setAuthor(`User Information`)
                 .setColor(`${config.color}`)
@@ -83,6 +83,7 @@ module.exports = {
         })
     },
     'roleinfo': (msg, command) => {
+        let args = stringhandler.argsParse('roleinfo', command);
         let role = msg.mentions.roles.first() || msg.guild.roles.get(args[1]) || msg.guild.roles.find(role => role.name === args[1]);
         if (!role) role = msg.member.highestRole;
         let embed = new Discord.RichEmbed()
