@@ -10,8 +10,6 @@ const webapp = web.app;
 
 web.run();
 
-let locale = 'ko';
-
 function prefixCheckAndIfExistsRun(prefix, msg, func) {
     if (msg.content.startsWith(prefix)) func(msg);
 }
