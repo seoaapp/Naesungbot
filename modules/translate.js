@@ -1,8 +1,6 @@
 const filehandler = require('../filehandler');
 const translate = require('@vitalets/google-translate-api');
 
-let locale = 'ko';
-
 // send 번역
 // 응용 TODO
 function send(msg, text) {
@@ -44,7 +42,7 @@ module.exports = {
         if (typeof newlocale === "undefined") {
             msg.channel.send('You did not choose an language!');
         } else {
-            locale = newlocale;
+            let locale = newlocale;
             filehandler.saveFile('lang.txt', locale);
             msg.channel.send('Changed Language!');
         }
