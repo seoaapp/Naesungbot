@@ -1,6 +1,8 @@
 const filehandler = require('../filehandler');
 const translate = require('@vitalets/google-translate-api');
 
+let locale = 'ko';
+
 // send 번역
 // 응용 TODO
 function send(msg, text) {
