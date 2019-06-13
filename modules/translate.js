@@ -1,5 +1,4 @@
 const filehandler = require('../filehandler');
-const translate = require('@vitalets/google-translate-api');
 const stringhandler = require('../stringhandler');
 
 // send 번역
@@ -11,6 +10,7 @@ function send(msg, text) {
 }
 
 function translateAndSendMessage(msg, destLocale, text) {
+    const translate = require('@vitalets/google-translate-api');
     translate(text, {to: destLocale})
         .then(function (res) {
             msg.channel.send(res.text);
