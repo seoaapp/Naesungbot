@@ -6,19 +6,7 @@ const stringhandler = require('../stringhandler');
 // 응용 TODO
 function send(msg, text) {
     let locale = stringhandler.readFile('lang.txt');
-    if(locale === 'en') {
-        msg.channel.send(text);
-        return msg;
-    } else {
-        translate(text, {to: locale})
-            .then(function (res) {
-                msg.channel.send(res.text);
-            })
-            .catch(err => {
-                console.error(err);
-            });
-        return msg;
-    }
+    translateAndSendMessage(msg, locale, text);
 }
 
 function translateAndSendMessage(msg, destLocale, text) {
