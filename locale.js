@@ -18,31 +18,12 @@ const refresh = () => {
 
 exports.get = () => refresh();
 
-
 const save = () => {
     filehandler.saveFile('locale.json', JSON.stringify(list));
 };
 
-exports.add = (id) => {
+exports.change = (lang) => {
     refresh();
-    list.push(Number(id));
-    console.log(list);
+    list[0] = lang;
     save();
-};
-
-exports.remove = (id) => {
-    refresh();
-    id = Number(id);
-    if (list.includes(id)) {
-        list = list.filter(guessNotBlackList => guessNotBlackList !== id);
-        save();
-        return true;
-    } else {
-        return false;
-    }
-};
-
-exports.check = function (id) {
-    refresh();
-    list.includes(Number(id));
 };
