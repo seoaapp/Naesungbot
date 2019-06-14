@@ -154,10 +154,11 @@ module.exports = {
                                     msg.channel.send("노래가 끝났습니다!");
                                     msg.member.voiceChannel.leave();
                                 });
+                            });
                         });
                     });
-                });
+                }
             });
         }
-    },
+    }
 };
