@@ -100,7 +100,10 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     if (msg.author.bot) return;
-    if (msg.channel.type === "dm") return;
+    if (msg.channel.type === "dm") {
+        msg.channel.send("내성봇은 DM에서는 쓸 수 없습니다!");
+        return;
+    }
     prefixCheckAndIfExistsRun(config.prefix, msg, (msg) => {
         blackListCheck(msg);
         let command = stringhandler.cutTextHead(config.prefix, msg.content);
