@@ -139,15 +139,15 @@ module.exports = {
                             }
                             let outStream = fs.createWriteStream('./sc/' + body.id + '.mp3');
                             response.pipe(outStream);
-                            // let write = fs.createWriteStream('./sc/' + body.id);
-                            // write.on('end', () => {
-                            //     ffmpeg('./sc/' + body.id)
-                            //         .inputFormat('mp3')
-                            //         .on('error', function(err) {
-                            //             console.log('An error occurred: ' + err.message);
-                            //         })
-                            //         .pipe(outStream)
-                            //         .end();
+                            let write = fs.createWriteStream('./sc/' + body.id);
+                            write.on('end', () => {
+                                ffmpeg('./sc/' + body.id)
+                                    .inputFormat('mp3')
+                                    .on('error', function(err) {
+                                        console.log('An error occurred: ' + err.message);
+                                    })
+                                    .pipe(outStream)
+                                    .end();
                                 let streamOptions = {seek: 0, volume: 1, bitrate: 64000};
                                 const dispatcher = connection.playFile('./sc/' + body.id + '.mp3', streamOptions);
                                 dispatcher.on("end", end => {
