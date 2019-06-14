@@ -147,7 +147,7 @@ module.exports = {
                                         console.log('An error occurred: ' + err.message);
                                     })
                                     .pipe(outStream)
-                                    .end();
+                                    .end())
                                 let streamOptions = {seek: 0, volume: 1, bitrate: 64000};
                                 const dispatcher = connection.playFile('./sc/' + body.id + '.mp3', streamOptions);
                                 dispatcher.on("end", end => {
