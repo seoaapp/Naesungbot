@@ -116,7 +116,7 @@ module.exports = {
     },
     'sc': (msg, command) => {
         const raw1 = stringhandler.cutTextHead('sc ', command);
-        if (!raw1) return msg.channel.send("인자가 없습니다");
+        if (!raw1) return msg.channel.send("인자가 없습니다.");
         if (raw1.indexOf("soundcloud.com") !== -1) {
             request("http://api.soundcloud.com/resolve.json?url=" + raw1 + "&client_id=71dfa98f05fa01cb3ded3265b9672aaf", function (error, response, body) {
                 if (error) msg.reply(error);
