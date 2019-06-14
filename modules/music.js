@@ -118,7 +118,7 @@ module.exports = {
         const raw1 = stringhandler.cutTextHead('sc ', command);
         if (!raw1) return msg.channel.send("인자가 없습니다.");
         if (raw1.indexOf("soundcloud.com") !== -1) {
-            request("http://api.soundcloud.com/resolve.json?url=" + raw1 + "&client_id=71dfa98f05fa01cb3ded3265b9672aaf", function (error, response, body) {
+            request("http://api.soundcloud.com/resolve.json?url=" + raw1 + "&client_id=aGG0HvvLMMohiFsNq85gvca9MB6wAxHP", function (error, response, body) {
                 if (error) msg.reply(error);
                 else if (response.statusCode === 200) {
                     body = JSON.parse(body);
@@ -132,8 +132,8 @@ module.exports = {
                         .setFooter("#" + body.id);
                     msg.channel.send(embed);
                     msg.member.voiceChannel.join().then(connection => {
-                        console.log(body.download_url + "?client_id=71dfa98f05fa01cb3ded3265b9672aaf");
-                        https.get(body.download_url + "?client_id=71dfa98f05fa01cb3ded3265b9672aaf", (response) => {
+                        console.log(body.download_url + "?client_id=aGG0HvvLMMohiFsNq85gvca9MB6wAxHP");
+                        https.get(body.download_url + "?client_id=aGG0HvvLMMohiFsNq85gvca9MB6wAxHP", (response) => {
                             if (response.statusCode !== 200) {
                                 return console.log('Response status was ' + response.statusCode);
                             }
