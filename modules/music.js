@@ -37,7 +37,7 @@ module.exports = {
             }).catch(err => console.log(err));
         }
         function searchNoPlay() {
-            let youtube = stringhandler.cutTextHead('youtube', command);
+            let youtube = stringhandler.cutTextHead('youtube ', command);
             let link = `https://www.youtube.com/results?search_query=` + encodeURI(youtube);
             if (!youtube) return msg.reply(`Please enter a keyword.`);
             let embed = new Discord.RichEmbed()
@@ -51,7 +51,7 @@ module.exports = {
         }
         if (!msg.member.voiceChannel) return searchNoPlay();
         if (msg.guild.me.voiceChannel) return msg.channel.send(`이미 ${msg.guild.me.voiceChannel}에서 노래를 하고 있습니다`);
-        const raw = stringhandler.cutTextHead('youtube', command);
+        const raw = stringhandler.cutTextHead('youtube ', command);
         if (!raw) return msg.channel.send("인자가 없습니다");
         let url = raw;
         let validate = ytdl.validateURL(url);
