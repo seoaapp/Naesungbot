@@ -187,105 +187,105 @@ module.exports = {
         msg.guild.member(kUser).kick("없음");
         msg.channel.send(kUser + " 유저를 성공적으로 킥 했습니다");
     },
-    'help': (msg, command) => {
-        let help1Embed = new Discord.RichEmbed()
-            .setColor("#2fce64")
-            .setTitle(`Naesungbot Help Page`)
-            .addField(`infohelp`, `shows information`, true)
-            .addField(`adminhelp`, `shows admin information`, true)
-            .addField(`settinghelp` ,`shows setting information `, true)
-            .addField(`musichelp`, ` shows music information `, true)
-            .addField(`searchhelp`, `shows search information `, true)
-            .addField(`otherhelp`, `shows other information `, true)
-            .addField(`webhelp`, `shows web information `, true)
-            .addField(`Invite Bot`, `https://bit.ly/Naesungbot`, true)
-            .addField(`Bot Server`, `https://discord.gg/9SZ3pnT`, true)
-            .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
-        msg.author.send(help1Embed);
-        msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
-    },
-    'infohelp': (msg, command) => {
-        let Info1Embed = new Discord.RichEmbed()
-            .setColor("#2fce64")
-            .setTitle(`Naesungbot Info Page`)
-            .addField(`hello`, `Hello`, true)
-            .addField(`ping`, `Show ping`, true)
-            .addField(`userinfo` ,`Shows user's information`, true)
-            .addField(`serverinfo`, ` Shows information of server`, true)
-            .addField(`botinfo`, `Shows information of bot`, true)
-            .addField(`roleinfo`, `Shows information of role`, true)
-            .addField(`uptime`, `Shows uptime of bot`, true)
-            .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
-        msg.author.send(Info1Embed);
-        msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
-    },
-    'settinghelp': (msg, command) => {
-        let set1Embed = new Discord.RichEmbed()
-            .setColor("#2fce64")
-            .setTitle(`Naesungbot Setting Page`)
-            .addField(`translate`, `translate`, true)
-            .addField(`language` ,`change language`, true)
-            .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
-        msg.author.send(set1Embed);
-        msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
-    },
-    'adminhelp': (msg, command) => {
-        let admin1Embed = new Discord.RichEmbed()
-            .setColor("#2fce64")
-            .setTitle(`Naesungbot Admin Page`)
-            .addField(`ban`, `Hello`, true)
-            .addField(`unban` ,`Shows user's information`, true)
-            .addField(`kick`, ` Shows information of server`, true)
-            .addField(`mute`, `Shows information of bot`, true)
-            .addField(`unmute`, `Shows information of role`, true)
-            .addField(`clear`, `Shows uptime of bot`, true)
-            .addField(`addchannel`, `Shows information of bot`, true)
-            .addField(`guildedit`, `Shows information of role`, true)
-            .addField(`invite`, `Shows uptime of bot`, true)
-            .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
-        msg.author.send(admin1Embed);
-        msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
-    },
-    'musichelp': (msg, command) => {
-        let music1Embed = new Discord.RichEmbed()
-            .setColor("#2fce64")
-            .setTitle(`Naesungbot Music Page`)
-            .addField(`play`, `play music`, true)
-            .addField(`exit` ,`Stop music`, true)
-            .addField(`sc`, `Soundcloud`, true)
-            .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
-        msg.author.send(music1Embed);
-        msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
-    },
-    'searchhelp': (msg, command) => {
-        let search1Embed = new Discord.RichEmbed()
-            .setColor("#2fce64")
-            .setTitle(`Naesungbot Search Page`)
-            .addField(`google`, `Search at google`, true)
-            .addField(`naver`, `Search at naver`, true)
-            .addField(`daum` ,`Search at daum`, true)
-            .addField(`nate`, `Search at nate`, true)
-            .addField(`twitch`, `Search at twitch`, true)
-            .addField(`mc` ,`Search minecraft account`, true)
-            .addField(`osu`, `Search osu account`, true)
-            .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
-        msg.author.send(search1Embed);
-        msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
-    },
-    'otherhelp': (msg, command) => {
-        let other1Embed = new Discord.RichEmbed()
-            .setColor("#2fce64")
-            .setTitle(`Naesungbot Function Page`)
-            .addField(`afk`, `set afk`, true)
-            .addField(`dog`, `Shows a dog picture`, true)
-            .addField(`neko` ,`Shows a cat picture `, true)
-            .addField(`melon`, `Shows melon music list`, true)
-            .addField(`hex`, `Shows color`, true)
-            .addField(`한강` ,`Shows 한강 temperature`, true)
-            .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
-        msg.author.send(other1Embed);
-        msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
-    },
+    // 'help': (msg, command) => {
+    //     let help1Embed = new Discord.RichEmbed()
+    //         .setColor("#2fce64")
+    //         .setTitle(`Naesungbot Help Page`)
+    //         .addField(`infohelp`, `shows information`, true)
+    //         .addField(`adminhelp`, `shows admin information`, true)
+    //         .addField(`settinghelp` ,`shows setting information `, true)
+    //         .addField(`musichelp`, ` shows music information `, true)
+    //         .addField(`searchhelp`, `shows search information `, true)
+    //         .addField(`otherhelp`, `shows other information `, true)
+    //         .addField(`webhelp`, `shows web information `, true)
+    //         .addField(`Invite Bot`, `https://bit.ly/Naesungbot`, true)
+    //         .addField(`Bot Server`, `https://discord.gg/9SZ3pnT`, true)
+    //         .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
+    //     msg.author.send(help1Embed);
+    //     msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
+    // },
+    // 'infohelp': (msg, command) => {
+    //     let Info1Embed = new Discord.RichEmbed()
+    //         .setColor("#2fce64")
+    //         .setTitle(`Naesungbot Info Page`)
+    //         .addField(`hello`, `Hello`, true)
+    //         .addField(`ping`, `Show ping`, true)
+    //         .addField(`userinfo` ,`Shows user's information`, true)
+    //         .addField(`serverinfo`, ` Shows information of server`, true)
+    //         .addField(`botinfo`, `Shows information of bot`, true)
+    //         .addField(`roleinfo`, `Shows information of role`, true)
+    //         .addField(`uptime`, `Shows uptime of bot`, true)
+    //         .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
+    //     msg.author.send(Info1Embed);
+    //     msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
+    // },
+    // 'settinghelp': (msg, command) => {
+    //     let set1Embed = new Discord.RichEmbed()
+    //         .setColor("#2fce64")
+    //         .setTitle(`Naesungbot Setting Page`)
+    //         .addField(`translate`, `translate`, true)
+    //         .addField(`language` ,`change language`, true)
+    //         .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
+    //     msg.author.send(set1Embed);
+    //     msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
+    // },
+    // 'adminhelp': (msg, command) => {
+    //     let admin1Embed = new Discord.RichEmbed()
+    //         .setColor("#2fce64")
+    //         .setTitle(`Naesungbot Admin Page`)
+    //         .addField(`ban`, `Hello`, true)
+    //         .addField(`unban` ,`Shows user's information`, true)
+    //         .addField(`kick`, ` Shows information of server`, true)
+    //         .addField(`mute`, `Shows information of bot`, true)
+    //         .addField(`unmute`, `Shows information of role`, true)
+    //         .addField(`clear`, `Shows uptime of bot`, true)
+    //         .addField(`addchannel`, `Shows information of bot`, true)
+    //         .addField(`guildedit`, `Shows information of role`, true)
+    //         .addField(`invite`, `Shows uptime of bot`, true)
+    //         .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
+    //     msg.author.send(admin1Embed);
+    //     msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
+    // },
+    // 'musichelp': (msg, command) => {
+    //     let music1Embed = new Discord.RichEmbed()
+    //         .setColor("#2fce64")
+    //         .setTitle(`Naesungbot Music Page`)
+    //         .addField(`play`, `play music`, true)
+    //         .addField(`exit` ,`Stop music`, true)
+    //         .addField(`sc`, `Soundcloud`, true)
+    //         .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
+    //     msg.author.send(music1Embed);
+    //     msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
+    // },
+    // 'searchhelp': (msg, command) => {
+    //     let search1Embed = new Discord.RichEmbed()
+    //         .setColor("#2fce64")
+    //         .setTitle(`Naesungbot Search Page`)
+    //         .addField(`google`, `Search at google`, true)
+    //         .addField(`naver`, `Search at naver`, true)
+    //         .addField(`daum` ,`Search at daum`, true)
+    //         .addField(`nate`, `Search at nate`, true)
+    //         .addField(`twitch`, `Search at twitch`, true)
+    //         .addField(`mc` ,`Search minecraft account`, true)
+    //         .addField(`osu`, `Search osu account`, true)
+    //         .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
+    //     msg.author.send(search1Embed);
+    //     msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
+    // },
+    // 'otherhelp': (msg, command) => {
+    //     let other1Embed = new Discord.RichEmbed()
+    //         .setColor("#2fce64")
+    //         .setTitle(`Naesungbot Function Page`)
+    //         .addField(`afk`, `set afk`, true)
+    //         .addField(`dog`, `Shows a dog picture`, true)
+    //         .addField(`neko` ,`Shows a cat picture `, true)
+    //         .addField(`melon`, `Shows melon music list`, true)
+    //         .addField(`hex`, `Shows color`, true)
+    //         .addField(`한강` ,`Shows 한강 temperature`, true)
+    //         .setFooter("Naesungbot, All Rights Reserved", client.user.avatarURL);
+    //     msg.author.send(other1Embed);
+    //     msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
+    // },
     'afk': (msg, command) => {
          client.setPresence({ afk });
          msg.channel.send("This user is now AFK.");

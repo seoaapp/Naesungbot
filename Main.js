@@ -95,7 +95,7 @@ loadModules();
 
 
 client.on('ready', () => {
-    console.log('사이봇 실행중!');
+    console.log('내성봇 실행중!');
 });
 
 client.on('message', msg => {
@@ -108,7 +108,22 @@ client.on('message', msg => {
         blackListCheck(msg);
         let command = stringhandler.cutTextHead(config.prefix, msg.content);
         if (!bulkCommandCheck(msg, command, externalFunctions)) {
-            msg.channel.send("유효한 명령어가 아닙니다!");
+            if(command === "help") {
+                let helpstr = "```내성봇 커맨드 리스트:\n\n";
+                let index = 0;
+                for (let dict of moduleloader.modules.values()) {
+                    for (let [name, func] of Object.entries(dict)) {
+                        index += 1;
+                        helpstr += name;
+                        if(index % 5 == 0) helpstr += "\n";
+                        else helpstr += " ";
+                    }
+                }
+                helpstr += "```";
+                console.log(helpstr)
+                msg.author.send(helpstr);
+            }
+            else msg.channel.send("유효한 명령어가 아닙니다!");
         }
     });
 });
