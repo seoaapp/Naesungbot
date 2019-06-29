@@ -1,5 +1,5 @@
 @echo off
-@title Discord bot
+@title Naesungbot
 @echo off
 :home
 node Main.js
