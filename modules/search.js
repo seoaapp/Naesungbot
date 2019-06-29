@@ -57,6 +57,19 @@ module.exports = {
         msg.channel.send(embed);
        })
     },
+    'google': (msg, command) => {
+        let google = stringhandler.cutTextHead('google', command);
+        let link = `https://www.google.com/search?q=` + encodeURI(google);
+        if (!google) return msg.reply(`Please type a Keyword!`);
+        let embed = new Discord.RichEmbed()
+            .setColor("White")
+            .setTimestamp()
+            .addField('Google Search:', 'Results Found!')
+            .addField("Keyword:", google)
+            .addField(':', link)
+            .setFooter("Betweenbot", msg.author.avatarURL);
+        msg.channel.send(embed);
+    },
     'naver': (msg, command) => {
         let naver = stringhandler.cutTextHead('naver', command);
         let link = `https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query=` + encodeURI(naver);
