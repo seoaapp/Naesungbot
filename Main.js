@@ -120,7 +120,6 @@ client.on('message', msg => {
                     }
                 }
                 helpstr += "```";
-                console.log(helpstr)
                 msg.author.send(helpstr);
             }
             else msg.channel.send("유효한 명령어가 아닙니다!");
