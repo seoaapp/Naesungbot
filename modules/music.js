@@ -10,7 +10,7 @@ const https = require('https');
 
 
 module.exports = {
-    'youtube': (msg, command) => {
+    'play': (msg, command) => {
         function play(url) {
             ytdl.getInfo(url, {downloadURL: true}, (err, info) => {
                 if (err) throw err;
@@ -46,6 +46,7 @@ module.exports = {
                 .addField('Action:', 'Searching on youtube')
                 .addField("Word:", youtube)
                 .addField('Link:', link)
+                .addField('Notice!', 'Please connect to voice channel!')
                 .setFooter("Your avatar", msg.author.avatarURL);
             msg.channel.send(embed);
         }
