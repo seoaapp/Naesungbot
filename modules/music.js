@@ -37,7 +37,7 @@ module.exports = {
             }).catch(err => console.log(err));
         }
         function searchNoPlay() {
-            let youtube = stringhandler.cutTextHead('youtube ', command);
+            let youtube = stringhandler.cutTextHead('play ', command);
             let link = `https://www.youtube.com/results?search_query=` + encodeURI(youtube);
             if (!youtube) return msg.reply(`Please enter a keyword.`);
             let embed = new Discord.RichEmbed()
