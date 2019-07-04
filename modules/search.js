@@ -122,4 +122,17 @@ module.exports = {
             .setFooter("Naesungbot", msg.author.avatarURL);
         msg.channel.send(embed);
     },
+    'namu': (msg, command) => {
+        let namu = stringhandler.cutTextHead('namu', command);
+        let link = `https://namu.wiki/w/` + encodeURI(namu);
+        if (!namu) return msg.reply(`Please type a Keyword!`);
+        let embed = new Discord.RichEmbed()
+            .setColor("Green")
+            .setTimestamp()
+            .addField('Namuwiki Search:', 'Search Results Found!')
+            .addField("Keyword:", namu)
+            .addField('link:', link)
+            .setFooter("Naesungbot", msg.author.avatarURL);
+        msg.channel.send(embed);
+    },
 };
