@@ -67,7 +67,7 @@ module.exports = {
             .addField('Google Search:', 'Results Found!')
             .addField("Keyword:", google)
             .addField(':', link)
-            .setFooter("Betweenbot", msg.author.avatarURL);
+            .setFooter("Naesungbot", msg.author.avatarURL);
         msg.channel.send(embed);
     },
     'naver': (msg, command) => {
@@ -80,7 +80,7 @@ module.exports = {
             .addField('Naver Search:', 'Results Found!')
             .addField("Keyword:", naver)
             .addField(':', link)
-            .setFooter("Betweenbot", msg.author.avatarURL);
+            .setFooter("Naesungbot", msg.author.avatarURL);
         msg.channel.send(embed);
     },
     'daum': (msg, command) => {
@@ -93,7 +93,7 @@ module.exports = {
             .addField('Nate Search:', 'Results Found!')
             .addField("Keyword:", daum)
             .addField('link:', link)
-            .setFooter("Betweenbot", msg.author.avatarURL);
+            .setFooter("Naesungbot", msg.author.avatarURL);
         msg.channel.send(embed);
     },
     'nate': (msg, command) => {
@@ -106,7 +106,20 @@ module.exports = {
             .addField('Nate Search:', 'Search Results Found!')
             .addField("Keyword:", nate)
             .addField('link:', link)
-            .setFooter("Betweenbot", msg.author.avatarURL);
+            .setFooter("Naesungbot", msg.author.avatarURL);
+        msg.channel.send(embed);
+    },
+    'duckduckgo': (msg, command) => {
+        let duckduckgo = stringhandler.cutTextHead('duckduckgo', command);
+        let link = `https://duckduckgo.com/?q=` + encodeURI(duckduckgo);
+        if (!duckduckgo) return msg.reply(`Please type a Keyword!`);
+        let embed = new Discord.RichEmbed()
+            .setColor("Yellow")
+            .setTimestamp()
+            .addField('DuckDuckgo Search:', 'Search Results Found!')
+            .addField("Keyword:", duckduckgo)
+            .addField('link:', link)
+            .setFooter("Naesungbot", msg.author.avatarURL);
         msg.channel.send(embed);
     },
 };
