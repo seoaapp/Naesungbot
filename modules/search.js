@@ -135,4 +135,7 @@ module.exports = {
             .setFooter("Naesungbot", msg.author.avatarURL);
         msg.channel.send(embed);
     },
+    'wiki' : (msg, command, command) => {
+        let wiki = stringhandler.cutTextHead('wiki', command, command);
+        let link = `https://.wikipedia.org/
 };
