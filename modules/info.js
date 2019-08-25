@@ -13,7 +13,20 @@ const request = require('request');
 
 module.exports = {
     'ping': (msg, command) => {
-      msg.reply(Math.round(client.ping) + "ms");
+      msg.reply(":ping-pong:" + Math.round(client.ping) + "ms");
+    },
+    'info': (msg, command) => {
+      let infoembed = new Discord.RichEmbed();
+        .setTitle(`Information of Naesungbot`)
+        .setColor(`${config.color}`)
+        .addField("Date", "2018년 7월 1일", true)
+        .addField("User", `${client.users.size}`, true)
+        .addField("Server", `${client.guilds.size}`, true)
+        .addField("Number of User", `${client.users.filter(a => a.bot === false).size}`, true)
+        .addField("Number of Bot", `${client.users.filter(a => a.bot === true).size}`, true)
+        .setTimestamp();
+      msg.channel.send(infoembed);
+        }
     },
     'userinfo': (msg, command) => {
         let args = stringhandler.argsParse('userinfo', command);
