@@ -10,6 +10,7 @@ const stringhandler = require('../stringhandler');
 const admin = require('../admin');
 const client = require('../client').client;
 const request = require('request');
+let statuses = [`Operating!`, `Type n!help`, `Inquire to Naesung#5882`, `Refers to https://naesung.xyz`]
 
 module.exports = {
     'ping': (msg, command) => {
