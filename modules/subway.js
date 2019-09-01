@@ -5,9 +5,10 @@ const config = require('../botsetting.json');
 const client = require('../client').client;
 const stringhandler = require('../stringhandler');
 const request = require('request');
+const cheerio = require('cheerio');
 
 //beta 서비스입니다. 일단 규모가 적당한 부산광역시 대상.
-//module.exports = {
+/*module.exports = {
   'busansub': (msg, command) => {
     var InfoEmbed = new Discord.RichEmbed()
             .setColor("#2fce64")
@@ -24,4 +25,14 @@ const request = require('request');
             .setFooter("Naesungbot", client.user.avatarURL);
         msg.author.send(InfoEmbed);
         msg.channel.send("Send to :regional_indicator_d::regional_indicator_m:.");
-    }//
+    }
+
+  'busansubsta'; (msg, command) => {
+    let station = stringhandler.cutTextHead('busansubsta ', command);
+      const $url = 'http://data.humetro.busan.kr/voc/api/open_api_process.tnn?act=json
+      const $KEY = 't08ZNLnI3UhYeDaYDk9qnM4WgZLRlavR%2Frw%2Fb1nDj3at5BV6xOyaE2OuGy1kS3GGqlJRyYgEJ15uVkLlC7EMkQ%3D%3D'
+      const $station = (station)
+      const $api_url = $url + '&scode=' + $station +
+      
+      &scode=101&day=1&updown=0&stime=13&enum=3&serviceKey=서비스키
+      */
