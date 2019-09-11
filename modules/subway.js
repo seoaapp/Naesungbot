@@ -33,6 +33,5 @@ const cheerio = require('cheerio');
       const $KEY = 't08ZNLnI3UhYeDaYDk9qnM4WgZLRlavR%2Frw%2Fb1nDj3at5BV6xOyaE2OuGy1kS3GGqlJRyYgEJ15uVkLlC7EMkQ%3D%3D'
       const $station = (station)
       const $api_url = $url + '&scode=' + $station +
-      
-      &scode=101&day=1&updown=0&stime=13&enum=3&serviceKey=서비스키
+      &day=1&updown=0&stime=13&enum=3&serviceKey=서비스키
 */
