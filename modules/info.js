@@ -17,7 +17,7 @@ module.exports = {
       msg.reply(":ping-pong:" + Math.round(client.ping) + "ms");
     },
     'info': (msg, command) => {
-      let infoembed = new Discord.RichEmbed();
+      let infoembed = new Discord.RichEmbed()
         .setTitle(`Information of Naesungbot`)
         .setColor(`${config.color}`)
         .addField("Date", "2018년 7월 1일", true)
@@ -27,7 +27,6 @@ module.exports = {
         .addField("Number of Bot", `${client.users.filter(a => a.bot === true).size}`, true)
         .setTimestamp();
       msg.channel.send(infoembed);
-        }
     },
     'userinfo': (msg, command) => {
         let args = stringhandler.argsParse('userinfo', command);
